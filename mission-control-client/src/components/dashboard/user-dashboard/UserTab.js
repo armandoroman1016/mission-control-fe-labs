@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+// Not being used and can be deleted when we cleanup code
+
 const UserTab = props => {
     const [githubInfo, setGithubInfo] = useState({ image: null, bio: null });
 
@@ -10,7 +12,6 @@ const UserTab = props => {
             .catch(err => console.log(err));
     }, [props.user.githubId]);
 
-    console.log(props);
     return (
         <div className='user-tab'>
             <div className='user-tab-image'>

@@ -2,7 +2,7 @@
 
 .dashboard-content-container {
   width: 100%;
-  margin-left: 80px;
+  padding-left: 80px;
 
   .dashboard-banner-container {
     display:flex;
@@ -10,10 +10,11 @@
     justify-content: space-between;
     background: $secondary;
     color: white;
-    padding: 2.4rem;
     border-radius: 5px;
+    padding: 3rem;
 
     .dashboard-banner-head {
+<<<<<<< HEAD
      display:flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -61,15 +62,45 @@
         p:nth-child(3) {
           font-size: 30px;
           padding-top: 0.5rem;
+=======
+      font-size: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      
+      .dashboard-product-project-programs {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        font-weight: bold;
+
+        .product-program-avatar {
+          font-size: 12px;
+          padding: 0.5rem 1.5rem;
+          margin-left: 0.75rem;
+          border-radius: 2.5px;
+          color: white;
+        }
+        .program-ds {
+          background: $primary;
+        }
+        .program-ux {
+          background: $nav-link-selected;
+        }
+        .program-web {
+          background: $accent;
+          color: black;
+>>>>>>> 58e11a147c3250a6cfeaef288aef77b4cb5bd3f9
         }
       }
 
       .dashboard-product-status {
-        padding: 8px 31px;
+        font-size: 1.5rem;
+        padding: 4px 15px;
         background: white;
         color: $nav-link-selected;
         border-radius: 5px;
-        font-size: 15px;
       }
     }
     .dashboard-product-desc {
@@ -86,8 +117,9 @@
       .dashboard-product-total-projects {
         font-size: 15px;
         background: white;
-        padding: 14px 9px;
+        padding: 1rem;
         color: black;
+<<<<<<< HEAD
         border-radius: 7px;
       }
 
@@ -114,6 +146,9 @@
           background: $accent;
           color: black;
         }
+=======
+        border-radius: 5px;
+>>>>>>> 58e11a147c3250a6cfeaef288aef77b4cb5bd3f9
       }
     }
   }

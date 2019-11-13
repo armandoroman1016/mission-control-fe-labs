@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
-import ProductList from "../products/ProductList";
+import ProjectList from "../projects/ProjectList";
 import { connect } from 'react-redux';
-import { getProducts } from '../../../actions/productActions';
+import { getProjectRoleByEmail } from '../../../actions/projectActions';
 import DashboardContent from "./DashboardContent";
 
 const DashboardHome = props => {
-
   useEffect(() => {
-    getProducts();
+    const email = localStorage.getItem("email");
+    email && props.getProjectRoleByEmail(email);
   }, []);
 
   return (
-    <div className="admin-dashboard-container">
-      <ProductList products={props.productStore.products} />
+    <div className="user-dashboard-container">
+      <ProjectList />
       <DashboardContent />
     </div>
   );
@@ -20,8 +20,9 @@ const DashboardHome = props => {
 
 const mapStateToProps = state => {
   return {
-    productStore: state.productStore
+    state: state
   };
 };
 
-export default connect(mapStateToProps, getProducts)(DashboardHome);
+export default connect(mapStateToProps, {getProjectRoleByEmail})(DashboardHome);
+

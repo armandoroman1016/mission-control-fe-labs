@@ -43,7 +43,6 @@ export const getProduct = id => {
             .post('', { query: product(id) })
             .then(res => {
                 const product = res.data.data.product;
-                console.log(product)
                 dispatch({ type: GET_PRODUCT_SUCCESS, payload: product })
             })
             .catch(err => dispatch({ type: GET_PRODUCT_ERROR, payload: err.response }));
@@ -57,7 +56,6 @@ export const getProductRoles = () => {
             .post('', { query: productRoles })
             .then(res => {
                 const productRoles = res.data.data.productRoles;
-                console.log(productRoles)
                 dispatch({ type: GET_PRODUCT_ROLES_SUCCESS, payload: productRoles })
             })
             .catch(err => dispatch({ type: GET_PRODUCT_ROLES_ERROR, payload: err.response }));
@@ -71,7 +69,6 @@ export const getProductRole = () => {
             .post('', { query: productRole })
             .then(res => {
                 const productRole = res.data.data.productRole;
-                console.log(productRole)
                 dispatch({ type: GET_PRODUCT_ROLE_SUCCESS, payload: productRole })
             })
             .catch(err => dispatch({ type: GET_PRODUCT_ROLE_ERROR, payload: err.response }));

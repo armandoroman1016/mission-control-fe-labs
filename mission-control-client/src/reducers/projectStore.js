@@ -23,6 +23,10 @@ import {
     GET_PROJECT_ROLE_START,
     GET_PROJECT_ROLE_SUCCESS,
     GET_PROJECT_ROLE_ERROR,
+    GET_PROJECT_ROLE_BY_EMAIL_START,
+    GET_PROJECT_ROLE_BY_EMAIL_SUCCESS,
+    GET_PROJECT_ROLE_BY_EMAIL_ERROR, 
+    RESET_PROJECTS 
 } from '../actions'
 
 const initialState = {
@@ -35,6 +39,7 @@ const initialState = {
     projectGroupMember: {},
     projectRoles: [],
     projectRole: {},
+    projectRoleByEmail: [],
     error: ''
 };
 
@@ -181,7 +186,30 @@ export const projectStore = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 error: action.payload
-            }                
+            }       
+        case GET_PROJECT_ROLE_BY_EMAIL_START:
+            return {
+                ...state,
+                isLoading: true,
+                error: ''
+            }    
+        case GET_PROJECT_ROLE_BY_EMAIL_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                projectRoleByEmail: action.payload
+            }     
+        case GET_PROJECT_ROLE_BY_EMAIL_ERROR:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            }
+        case RESET_PROJECTS:
+          return {
+            ...state,
+            projectRoleByEmail: action.payload
+          }
         default:
             return state;
     }
