@@ -13,7 +13,7 @@ const DashboardHome = props => {
   const { data, fetching, error } = results;
   
   useEffect(() => {
-    getProducts();
+    props.getProducts();
   }, []);
 
   if(!data){
